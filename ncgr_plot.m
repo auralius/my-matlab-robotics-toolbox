@@ -20,6 +20,8 @@ if (g.h == -1)
     g.quiver_y = quiver3(0,0,0,0,0,0, axis_scale, 'g');
     g.quiver_z = quiver3(0,0,0,0,0,0, axis_scale, 'b');
     %axis equal tight
+    
+    view([1 1 1]);
 end
 
 for i = 1 : r.n
