@@ -1,4 +1,4 @@
-# DH-Parameters with MATLAB
+# my-matlab-robotics-toolbox
 
 Simple and straight-forward implementation of DH-parameters in MATLAB  
 This can be used to execute forward kinematics of the robot to find position and orientation of every link of the robot.  
