@@ -1,4 +1,4 @@
-function r = cgr_create(theta, d, a, alpha, offset, type, base)
+function r = cgr_create(theta, d, a, alpha, offset, type, base, ub, lb)
 % Create a robot structure
 
     % Base position of the robot (nx1)
@@ -25,5 +25,14 @@ function r = cgr_create(theta, d, a, alpha, offset, type, base)
     r.jac = zeros(3, r.n); 
     
     % Homogenous transformation matrix for every link
-    r.T = repmat(zeros(4), 1, 1, r.n);
+    r.T = repmat(zeros(4), 1, 1, r.n);  
+    
+    % Joint limits,upper boundaries and lower boundaries
+    if nargin > 7
+        r.ub = ub; 
+        r.lb = lb;
+    else
+        r.ub = ones(r.n, 1).*inf; 
+        r.lb = ones(r.n, 1).*-inf;
+    end
 end
