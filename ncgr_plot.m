@@ -12,9 +12,10 @@ if (g.h == -1)
     g.h = plot3(0, 0, 0, '-m*', 'LineWidth', 4);
     
     % Adjust axis limit here, we start form robot base:
-    xlim([r.base(1)-3 r.base(1)+3]);
-    ylim([r.base(2)-3 r.base(2)+3]);
-    zlim([r.base(3)-3 r.base(3)+3]);
+    max_range = max(sum(r.d),sum(r.a));
+    xlim([r.base(1)-max_range r.base(1)+max_range]);
+    ylim([r.base(2)-max_range r.base(2)+max_range]);
+    zlim([r.base(3)-max_range r.base(3)+max_range]);
     
     g.quiver_x = quiver3(0,0,0,0,0,0, axis_scale, 'r');
     g.quiver_y = quiver3(0,0,0,0,0,0, axis_scale, 'g');
