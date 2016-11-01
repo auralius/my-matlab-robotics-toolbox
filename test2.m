@@ -16,7 +16,7 @@ type = ['r','r','r','r'];
 base = [0; 0; 0];
 
 planar_4r = cgr_create(theta, d, a, alpha, offset, type, base, ...
-                       [pi/2 pi/2 pi/2 pi/2], [-pi/2 -pi/2 -pi/2 -pi/2]);  % joint limts!
+                       [pi/2; pi/2; pi/2; pi/2], [-pi/2; -pi/2; -pi/2; -pi/2]);  % joint limts!
 planar_4r = cgr_self_update(planar_4r, [0; 0; 0; 0]);
 g = ncgr_plot(g, planar_4r);
 

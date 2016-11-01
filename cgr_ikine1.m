@@ -26,15 +26,7 @@ while 1
     delta_x = p - x;
 
     delta_q = pinv(jac)*delta_x;
-    
-    for ii = 1 : r.n
-        if delta_q(ii) > r.ub(ii)
-            delta_q(ii) = r.ub(ii);
-        elseif delta_q(ii) < r.lb(ii)
-            delta_q(ii) = r.lb(ii);
-        end
-    end
-    
+    delta_q = min(r.ub, max(delta_q, r.lb)); % This is a saturation function.
     q = q + delta_q;
     
     [~, x] = cgr_fkine_ee(r, q); 
