@@ -26,7 +26,15 @@ while 1
     
     delta_x = p - x;
 
-    K = (jac'*jac + lambda^2 .* eye(r.n))\jac';
+    % Keep in mind then inverse operation fails when matrix is not full
+    % rank, instead we will use pinv, Therefore, when lambda = 0, this
+    % method is the same as the pseudo-inverse method.
+    if lambda > 0 
+        K = (jac'*jac + lambda^2 .* eye(r.n))\jac';
+    else
+        K = pinv(jac);
+    end
+    
     delta_q = K*delta_x;
     q = q + delta_q;
     q = min(r.ub, max(q, r.lb)); % This is a saturation function.
