@@ -28,16 +28,17 @@ g = ncgr_plot(g, planar_4r);
 pause(1);
 
 %% Demo for inverse kinematics
-for x = 0.1:0.1:1.9
-    [q, k, err]= cgr_ikine1(planar_4r, [x; 0; 0], 0.01, 100);
-    %[q, k, err]= cgr_ikine2(planar_4r, [x; 0; 0], 2, 0.01, 100);
+k = 1;
+for x = 0.1:0.1:2
+    %[q, k, err]= cgr_ikine1(planar_4r, [x; 0; 0], 0.01, 100);
+    [q, k, err]= cgr_ikine2(planar_4r, [x; 0; 0], 1, 0.01, 100);
     planar_4r = cgr_self_update(planar_4r, q);
     g = ncgr_plot(g, planar_4r);
     pause(0.1);
 end
 
 %% Test the joint limits
-[q, k, err]= cgr_ikine1(planar_4r, [0.1; 0; 0], 0.001, 100);
+[q, k, err]= cgr_ikine1(planar_4r, [0.1; 0; 0], 0.01, 100);
 planar_4r = cgr_self_update(planar_4r, q);
 g = ncgr_plot(g, planar_4r);
 
