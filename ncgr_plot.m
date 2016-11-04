@@ -1,13 +1,26 @@
-function g = ncgr_plot(g, r)
+function g = ncgr_plot(g, r, view_vector, axis_scale)
 % Plot the robot
+% g is the graphic structure.
+% r is the robot structure.
+% view_vector is the view vector (1x3 vector).
 
-% Adjust the scale of the three arrows representing the coordinate frame
-axis_scale = 0.5;
+% Adjust the view and the scale of the three arrows representing the
+% coordinate frame
 
 if (g.h == -1)
     figure;
     hold on;
     grid on;
+    
+    if nargin < 3
+        view([1 1 1]);
+        axis_scale = 0.5;
+    elseif nargin < 4
+        axis_scale = 0.5;
+        view(view_vector);
+    else
+        view(view_vector);
+    end
     
     g.h = plot3(0, 0, 0, '-m*', 'LineWidth', 4);
     
@@ -20,9 +33,7 @@ if (g.h == -1)
     g.quiver_x = quiver3(0,0,0,0,0,0, axis_scale, 'r');
     g.quiver_y = quiver3(0,0,0,0,0,0, axis_scale, 'g');
     g.quiver_z = quiver3(0,0,0,0,0,0, axis_scale, 'b');
-    %axis equal tight
-    
-    view([1 1 1]);
+    %axis equal tight    
 end
 
 for i = 1 : r.n
@@ -30,7 +41,7 @@ for i = 1 : r.n
     vy(:, i) = r.T(1:3,1:3,i)*[0; 1; 0];
     vz(:, i) = r.T(1:3,1:3,i)*[0; 0; 1];
     x(:, i) = r.T(1:3,4, i);
-end 
+end
 
 set(g.h, 'XData', [r.base(1) x(1, :)], 'YData', [r.base(2) x(2, :)], ...
     'ZData', [r.base(3) x(3, :)]);

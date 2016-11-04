@@ -1,4 +1,5 @@
 function [q, k, err] = cgr_ikine1(r, p, treshold, max_iter)
+% Using pseudo-inverse method
 % https://groups.csail.mit.edu/drl/journal_club/papers/033005/buss-2004.pdf
 % See Equ. 7.
 % r is the sructure of the robot.
