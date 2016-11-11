@@ -8,14 +8,15 @@ function jac = cgr_jac(r, q)
 
 epsilon = 1e-6; 
 epsilon_inv = 1/epsilon;
+n = length(q); % This is actually r.n, but MATLAB Coder doesnot like the latter.
 
 % Caclulate f0, when no perturbation happens
 [~, f0] = cgr_fkine_ee(r, q); 
 
 % Do perturbation
 qc0 = q;
-jac = zeros(length(f0), r.n);
-for i = 1 : r.n
+jac = zeros(length(f0), n);
+for i = 1 : n
     q = qc0;
     q(i) = qc0(i) + epsilon;
     

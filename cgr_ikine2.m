@@ -45,7 +45,7 @@ while 1
     err = norm(delta_x);
     
     if err < treshold || k > max_iter
-        fprintf('**cgr_ikine2** breaks after %i iterations with errror %f.\n', k, err);
+        %fprintf('**cgr_ikine2** breaks after %i iterations with errror %f.\n', k, err);
         break;
     end
 end
