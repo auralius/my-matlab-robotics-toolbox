@@ -41,8 +41,12 @@ for i = 1 : 1 : r.n
                     st    ct*ca    -ct*sa    r.a(i)*st ; ...
                     0     sa       ca        r.d(i)    ; ...
                     0     0        0         1         ];
-    temp(1:3, 4) = temp(1:3, 4) + r.base;
+    temp(1:3, 4) = temp(1:3, 4);
     T(:,:,i) = temp;
+end
+
+for i = 1:r.n
+    T(1:3,4,i) = T(1:3,4,i) + r.base;
 end
 
 end
