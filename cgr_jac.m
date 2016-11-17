@@ -6,17 +6,18 @@ function jac = cgr_jac(r, q)
 % r is the structure of the serial robot.
 % q is the joint values (radians or meters).
 
+global N_DOFS;
+
 epsilon = 1e-6; 
 epsilon_inv = 1/epsilon;
-n = length(q); % This is actually r.n, but MATLAB Coder doesnot like the latter.
 
 % Caclulate f0, when no perturbation happens
 [~, f0] = cgr_fkine_ee(r, q); 
 
 % Do perturbation
 qc0 = q;
-jac = zeros(length(f0), n);
-for i = 1 : n
+jac = zeros(3, N_DOFS);
+for i = 1 : N_DOFS
     q = qc0;
     q(i) = qc0(i) + epsilon;
     

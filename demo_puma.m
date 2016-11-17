@@ -6,7 +6,11 @@ close all;
 %% Graphic
 g = ncgr_graphic();
 
-%% Scara robot DH-Parameters
+%% Puma robot DH-Parameters
+
+global N_DOFS;
+N_DOFS = 6;
+
 d2 = 218.44 / 1000.0;
 d3 = -88.9 / 1000.0;
 a2 = 332.74 / 1000.0;
@@ -22,12 +26,15 @@ d = [0 d2 d3 d4 0 0];
 type = ['r','r','r','r','r','r'];
 base = [0; 0; 0];
 
-puma = cgr_create(theta, d, a, alpha, offset, type, base);
+lb = [-inf; -inf; -inf; -inf; -inf; -inf];
+ub = [inf; inf; inf; inf; inf; inf];
+
+puma = cgr_create(theta, d, a, alpha, offset, type, base, ub, lb);
 puma = cgr_self_update(puma, [0; 0; 0; 0; 0; 0]);
 g = ncgr_plot(g, puma);
 
 pause(1);
-puma = cgr_self_update(puma, [0; 0; 0; -0.2; 0; 0 ]);
+puma = cgr_self_update(puma, [0; 0.2; 0; 0; 0; 0 ]);
 g = ncgr_plot(g, puma);
 
 pause(1);

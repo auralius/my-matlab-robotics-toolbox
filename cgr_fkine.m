@@ -16,36 +16,35 @@ function T = cgr_fkine(r, q)
 % https://www.cs.duke.edu/brd/Teaching/Bio/asmb/current/Papers/chap3-forward-kinematics.pdf
 % See page 75
 
-temp = eye(4);
-T = repmat(zeros(4), 1, 1, r.n);
+global N_DOFS;
 
-if length(q) == r.n
-    for i = 1 : r.n
-        if r.type(i) == 'r'
-            r.theta(i) = q(i);
-        elseif r.type(i) == 'p'
-            r.d(i) = q(i);
-        end
+temp = eye(4);
+T = repmat(zeros(4), 1, 1, N_DOFS);
+
+
+for i = 1 : N_DOFS
+    if r.type(i) == 'r'
+        r.theta(i) = q(i);
+    elseif r.type(i) == 'p'
+        r.d(i) = q(i);
     end
-else
-    error('Input q has wrong dimension!')
 end
 
-for i = 1 : 1 : r.n
+for i = 1 : 1 : N_DOFS
     ct = cos(r.theta(i) + r.offset(i));
     st = sin(r.theta(i) + r.offset(i));
     ca = cos(r.alpha(i));
     sa = sin(r.alpha(i));
     
     temp = temp * [ ct    -st*ca   st*sa     r.a(i)*ct ; ...
-                    st    ct*ca    -ct*sa    r.a(i)*st ; ...
-                    0     sa       ca        r.d(i)    ; ...
-                    0     0        0         1         ];
+        st    ct*ca    -ct*sa    r.a(i)*st ; ...
+        0     sa       ca        r.d(i)    ; ...
+        0     0        0         1         ];
     temp(1:3, 4) = temp(1:3, 4);
     T(:,:,i) = temp;
 end
 
-for i = 1:r.n
+for i = 1:N_DOFS
     T(1:3,4,i) = T(1:3,4,i) + r.base;
 end
 

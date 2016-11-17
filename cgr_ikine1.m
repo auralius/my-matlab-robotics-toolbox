@@ -1,4 +1,4 @@
-function [q, k, err] = cgr_ikine1(r, p, treshold, max_iter)
+function [q, iter_taken, err] = cgr_ikine1(r, p, treshold, max_iter)
 % Using pseudo-inverse method
 % https://groups.csail.mit.edu/drl/journal_club/papers/033005/buss-2004.pdf
 % See Equ. 7.
@@ -14,15 +14,16 @@ elseif nargin  < 4
     max_iter = 100;
 end
 
-% Make sure robot stucture has been updated by calling cgr_self_update!
-x = r.T(1:3, 4, end);
+% Get current pose.
 q = r.qc;
-jac = r.jac;
+T =  cgr_fkine(r, q); 
+x = T(1:3, 4, end);
+jac = cgr_jac(r, q);
 
-k = 1;
+iter_taken = 1;
 
 while 1
-    k = k + 1;
+    iter_taken = iter_taken + 1;
     
     delta_x = p - x;
 
@@ -35,7 +36,7 @@ while 1
     
     err = norm(delta_x);
     
-    if err < treshold || k > max_iter
+    if err < treshold || iter_taken > max_iter
         %fprintf('**cgr_ikine1** breaks after %i iterations with errror %f.\n', k, err);
         break;
     end

@@ -1,4 +1,4 @@
-function [q, k, err] = cgr_ikine2(r, p, lambda, treshold, max_iter)
+function [q, iter_taken, err] = cgr_ikine2(r, p, lambda, treshold, max_iter)
 % Using damped least square method
 % http://math.ucsd.edu/~sbuss/ResearchWeb/ikmethods/iksurvey.pdf
 % See Equ. 11.
@@ -7,6 +7,8 @@ function [q, k, err] = cgr_ikine2(r, p, lambda, treshold, max_iter)
 %
 % THIS DOES NOT CHANGE STRUCTURE OF THE ROBOT!
 
+global N_DOFS;
+
 if nargin  < 3
     treshold = 0.01;
     max_iter = 100;
@@ -14,15 +16,16 @@ elseif nargin  < 4
     max_iter = 100;
 end
 
-% Make sure robot stucture has been updated by calling cgr_self_update!
-x = r.T(1:3, 4, end);
+% Get current pose.
 q = r.qc;
-jac = r.jac;
+T =  cgr_fkine(r, q); 
+x = T(1:3, 4, end);
+jac = cgr_jac(r, q);
 
-k = 1;
+iter_taken = 1;
 
 while 1
-    k = k + 1;
+    iter_taken = iter_taken + 1;
     
     delta_x = p - x;
 
@@ -30,7 +33,7 @@ while 1
     % rank, instead we will use pinv, Therefore, when lambda = 0, this
     % method is the same as the pseudo-inverse method.
     if lambda > 0 
-        K = (jac'*jac + lambda^2 .* eye(r.n))\jac';
+        K = (jac'*jac + lambda^2 .* eye(N_DOFS))\jac';
     else
         K = pinv(jac);
     end
@@ -44,8 +47,8 @@ while 1
     
     err = norm(delta_x);
     
-    if err < treshold || k > max_iter
-        %fprintf('**cgr_ikine2** breaks after %i iterations with errror %f.\n', k, err);
+    if err < treshold || iter_taken > max_iter
+        %fprintf('**cgr_ikine2** breaks after %i iterations with errror %f.\n', iter_taken, err);
         break;
     end
 end
