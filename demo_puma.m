@@ -1,3 +1,6 @@
+% https://www.cs.duke.edu/brd/Teaching/Bio/asmb/current/Papers/chap3-forward-kinematics.pdf
+% page 98
+
 %%
 clc;
 clear all;
@@ -11,38 +14,29 @@ g = ncgr_graphic();
 global N_DOFS;
 N_DOFS = 6;
 
-d2 = 218.44 / 1000.0;
-d3 = -88.9 / 1000.0;
-a2 = 332.74 / 1000.0;
-a3 = 0 / 1000.0;
-d4 = 432.09 / 1000.0;
-d6 = 53.34 / 1000.0;
-
 theta = [0 0 0 0 0 0];
-alpha = [0 -pi/2 0 pi/2 -pi/2 pi/2];
+alpha = [-pi/2 0 pi/2 -pi/2 pi/2 0];
 offset = [0 0 0 0 0 0];
-a = [0 0 a2 a3 0 0];
-d = [0 d2 d3 d4 0 0];
+a = [0 8 0 0 0 0]; % in inches
+d = [13 0 2.5 8 0 2.5]; % in inches
 type = ['r','r','r','r','r','r'];
 base = [0; 0; 0];
 
-lb = [-inf; -inf; -inf; -inf; -inf; -inf];
-ub = [inf; inf; inf; inf; inf; inf];
+% See http://medesign.seas.upenn.edu/index.php/Courses/MEAM520-12C-P01-IK
+lb = [deg2rad(-180); deg2rad(-75); deg2rad(-235); deg2rad(-580); deg2rad(-120); deg2rad(-215)];
+ub = [deg2rad(110); deg2rad(240); deg2rad(60); deg2rad(40); deg2rad(110); deg2rad(295)];
 
 puma = cgr_create(theta, d, a, alpha, offset, type, base, ub, lb);
 puma = cgr_self_update(puma, [0; 0; 0; 0; 0; 0]);
 g = ncgr_plot(g, puma);
 
-pause(1);
-puma = cgr_self_update(puma, [0; 0.2; 0; 0; 0; 0 ]);
-g = ncgr_plot(g, puma);
 
-pause(1);
-puma = cgr_self_update(puma, [0; 0; 0; 0; 0; 0]);
-g = ncgr_plot(g, puma);
-
-% %% Demo inverese kinematics
-% [q, k, err]= cgr_ikine1(puma, [0.5; 0.5; -0.5], 0.01, 100);
-% puma = cgr_self_update(puma, q);
-% g = ncgr_plot(g, puma);
-% pause(0.1);
+%% Demo inverese kinematics
+x = puma.T(1:3,4, end);
+step = linspace(0, 10, 20);
+for i = 1:length(step)
+    [q, k, err]= cgr_ikine1(puma, [x(1)+step(i); x(2); 13], 0.001, 1000)
+    puma = cgr_self_update(puma, q);
+    g = ncgr_plot(g, puma);
+    pause(0.1);
+end

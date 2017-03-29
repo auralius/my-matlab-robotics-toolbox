@@ -36,6 +36,10 @@ if (g.h == -1)
     g.quiver_x = quiver3(0,0,0,0,0,0, axis_scale, 'r');
     g.quiver_y = quiver3(0,0,0,0,0,0, axis_scale, 'g');
     g.quiver_z = quiver3(0,0,0,0,0,0, axis_scale, 'b');   
+    
+    xlabel('x');
+    ylabel('y');
+    zlabel('z');
 end
 
 for i = 1 : N_DOFS
