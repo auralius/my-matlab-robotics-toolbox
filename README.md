@@ -13,7 +13,7 @@ Features:
 * Homogenous transformation of each link of the robot
 * Numerical jacobian
 * Simple visualization, it can also be animated
-* Inverse kinematics with the pseudo-inverse method.
+* Inverse kinematics with the pseudo-inverse method and damped least square method.
 * Code generation ready.
 
 How to use:
@@ -26,4 +26,4 @@ How to use:
 [sshot]: https://raw.githubusercontent.com/auralius/matlab-dh-parameters/master/sshot.png "Screenshot"
 
 Auralius Manurung 
-manurung.auralius@gmail.com
+manurunga@yandex.com
