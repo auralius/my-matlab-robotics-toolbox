@@ -41,17 +41,18 @@ if (g.h == -1)
     ylabel('y');
     zlabel('z');
     
-    for i = 1 : N_DOFS
-        g.htxt(i) = text(0,0,0, num2str(i), 'FontWeight', 'bold'); 
+    for i = 0 : N_DOFS
+        g.htxt(i+1) = text(0,0,0, num2str(i), 'FontWeight', 'bold'); 
     end
 end
 
+set(g.htxt(1), 'Position', r.base);
 for i = 1 : N_DOFS
     vx(:, i) = r.T(1:3,1:3,i)*[1; 0; 0];
     vy(:, i) = r.T(1:3,1:3,i)*[0; 1; 0];
     vz(:, i) = r.T(1:3,1:3,i)*[0; 0; 1];
     x(:, i) = r.T(1:3,4, i);
-    set(g.htxt(i), 'Position', x(:, i) + [1;1;1]);
+    set(g.htxt(i+1), 'Position', x(:, i) + [0; 0; 0.2]);
 end
 
 set(g.h, 'XData', [r.base(1) x(1, :)], 'YData', [r.base(2) x(2, :)], ...
