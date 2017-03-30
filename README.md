@@ -14,7 +14,7 @@ Features:
 * Numerical jacobian
 * Simple visualization, it can also be animated
 * Inverse kinematics with the pseudo-inverse method.
-* COde generation ready.
+* Code generation ready.
 
 How to use:
 * Create the robot structure with **cgr_create**.
