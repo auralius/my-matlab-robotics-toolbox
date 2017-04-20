@@ -3,7 +3,7 @@
 Simple and straight-forward implementation of DH-parameters in MATLAB  
 This can be used to execute forward kinematics of the robot to find position and orientation of every link of the robot.  
 
-There are several different convention on implementation of DH-parameters. This one follows this book: https://www.cs.duke.edu/brd/Teaching/Bio/asmb/current/Papers/chap3-forward-kinematics.pdf  which is similiar to the one in Peter Corke's RVC toolbox (https://github.com/petercorke/robotics-toolbox-matlab).  
+There are two different conventions on the implementation of the DH-parameters. This one uses the standard DH-parameters which can as well be found in this book: https://www.cs.duke.edu/brd/Teaching/Bio/asmb/current/Papers/chap3-forward-kinematics.pdf. The results have been validated with Peter Corke's RVC toolbox (https://github.com/petercorke/robotics-toolbox-matlab).
 
 **cgr** prefix means the code is code-generation ready.    
 **ncgr** means the code is **NOT** code-generation ready.
