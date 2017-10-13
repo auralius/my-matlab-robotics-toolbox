@@ -22,13 +22,14 @@ How to use:
 * Actuate and update the joint with **cgr_self_update** functions.
 * If necessary, plot the robot with **ncgr_plot** by first calling **ncgr_graphic** once at the beginning of the program.
 * To create a compiled MEX or DLL files, two examples of MATLAB Coder project files  are provided. This is where the global variable is used.
+
 ![Screenshot][sshot]
 
-[sshot]: https://raw.githubusercontent.com/auralius/matlab-dh-parameters/master/sshot.png "Screenshot"
+[sshot]: https://raw.githubusercontent.com/auralius/my-matlab-robotics-toolbox/master/sshot.png "Screenshot"
 
 ![Screenshot][sshot2]
 
-[sshot]: https://raw.githubusercontent.com/auralius/matlab-dh-parameters/master/sshot2.png "Screenshot2"
+[sshot2]: https://raw.githubusercontent.com/auralius/my-matlab-robotics-toolbox/master/sshot2.png "Screenshot2"
 
 Auralius Manurung 
 manurunga@yandex.com
