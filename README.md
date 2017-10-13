@@ -17,11 +17,11 @@ Features:
 * Code generation ready.
 
 How to use:
-* Create a global variable N_DOFS and define the number of degree-of-freedom of the robot in it. The reason why global variable is used is because I keep having problems in using dynamic memory allocation for MATLAB coder. Therefore, I use a global variable to define the dimension of necessary static arrays.
+* Create a global variable N_DOFS and define the number of degree-of-freedom of the robot in it. The reason why global variable is used is because I keep having problems in using the dynamic memory allocation for MATLAB coder. Therefore, I use global variable to define the dimension of the necessary static arrays.
 * Create the robot structure with **cgr_create**.
 * Actuate and update the joint with **cgr_self_update** functions.
 * If necessary, plot the robot with **ncgr_plot** by first calling **ncgr_graphic** once at the beginning of the program.
-* To create a compiled MEX or DLL files, two examples of MATLAB Coder project files  are provided. This is where the global variable is used.
+* To create the compiled MEX or DLL files, two examples of MATLAB Coder project files  are provided. This is where the global variable is used.
 
 ![Screenshot][sshot]
 
