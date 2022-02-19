@@ -1,11 +1,20 @@
 function [q, iter_taken, err] = cgr_ikine1(r, p, treshold, max_iter)
-% Using pseudo-inverse method
+% Compute the inverse kinematics by using the pseudo-inverse method
+%
 % https://groups.csail.mit.edu/drl/journal_club/papers/033005/buss-2004.pdf
 % See Equ. 7.
-% r is the sructure of the robot.
-% p (3x1) is the target cartesian position;
 %
-% THIS DOES NOT CHANGE STRUCTURE OF THE ROBOT!
+% Inputs:
+%   r - sructure of the robot.
+%   p - the target cartesian position (3x1 vector)
+%   treshold - terminate the iteration when err < treshold
+%   max_iter - maximum iiterations
+%
+% Outputs:
+%   q - computed joint values
+%   iter_taken - total iteration number
+%   err - actual error between the actual position and the target position
+%
 
 if nargin  < 3
     treshold = 0.01;

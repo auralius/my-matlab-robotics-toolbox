@@ -1,20 +1,22 @@
 function T = cgr_fkine(r, q)
 % This functions calculate tip position and orientation of all links from
-% given joint values.
-% THIS DOES NOT CHANGE STRUCTURE OF THE ROBOT!
+% given joint values. This gives the same result as the RVC toolbox.
 %
-% r is the structure of the serial robot.
-% q is the joint values (radians or meters).
-% T contains the homogenous transformation matrix of each link starting
-% from the base T(:,:,1) to the end-effector T(:,:,n+1).
+% THIS FUNCTION MUST NOT CHANGE STRUCTURE OF THE ROBOT!
 %
-% This gives the same result as the RVC toolbox.
+% Inputs:
+%   r - structure of the serial robot.
+%   q - the joint values (radians or meters).
+%
+% Outputs:
+%   T - homogenous transformation matrix of each link starting
+%       from the base T(:,:,1) to the end-effector T(:,:,n+1).
 %
 % Contact: manurung.auralius@gmail.com
 %
 % References:
-% https://www.cs.duke.edu/brd/Teaching/Bio/asmb/current/Papers/chap3-forward-kinematics.pdf
-% See page 75
+%   https://www.cs.duke.edu/brd/Teaching/Bio/asmb/current/Papers/chap3-forward-kinematics.pdf
+%   See page 75
 
 global N_DOFS;
 

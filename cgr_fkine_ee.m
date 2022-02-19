@@ -1,13 +1,17 @@
 function [R, p] = cgr_fkine_ee(r, q)
 % This functions calculate tip position and orientation of the last link
 % from given joint values.
-% THIS DOES NOT CHANGE STRUCTURE OF THE ROBOT!
 %
-% r is the structure of the serial robot.
-% q is the joint values (radians or meters).
-% T contains the homogenous transformation matrix of each link starting
-% from the base T(:,:,1) to the end-effector T(:,:,n+1).
+% Inputs:
+%   r - structure of the serial robot.
+%   q - joint values (radians or meters).
+%   T - contains the homogenous transformation matrix of each link starting
+%       from the base T(:,:,1) to the end-effector T(:,:,n+1).
 %
+% Outputs: 
+%   R - current orientation
+%   p - current position
+% 
 % This gives the same result as the RVC toolbox.
 %
 % Contact: manurung.auralius@gmail.com
@@ -15,6 +19,7 @@ function [R, p] = cgr_fkine_ee(r, q)
 % References:
 % https://www.cs.duke.edu/brd/Teaching/Bio/asmb/current/Papers/chap3-forward-kinematics.pdf
 % See page 75
+%
 
 T = cgr_fkine(r, q);
 

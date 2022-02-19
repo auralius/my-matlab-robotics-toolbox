@@ -1,11 +1,21 @@
 function [q, iter_taken, err] = cgr_ikine2(r, p, lambda, treshold, max_iter)
-% Using damped least square method
+% Compute the inverse kinematics the damped least square method
+%
 % http://math.ucsd.edu/~sbuss/ResearchWeb/ikmethods/iksurvey.pdf
 % See Equ. 11.
-% r is the sructure of the robot.
-% p (3x1) is the target cartesian position;
 %
-% THIS DOES NOT CHANGE STRUCTURE OF THE ROBOT!
+% Inputs:
+%   r - sructure of the robot.
+%   p - target cartesian position (3x1 vector)
+%   lambda - damping factor
+%   treshold - terminate the iteration when err < treshold
+%   max_iter - maximum iiterations
+%
+% Outputs:
+%   q - computed joint values
+%   iter_taken - total iteration number
+%   err - actual error between the actual position and the target position
+%
 
 global N_DOFS;
 

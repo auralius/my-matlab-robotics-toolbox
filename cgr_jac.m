@@ -1,10 +1,15 @@
 function jac = cgr_jac(r, q)
 % Compute jacobian of a serial robot numerically, works for both prismatic
 % and revolute joint
+%
 % THIS DOES NOT CHANGE STRUCTURE OF THE ROBOT!
 %
-% r is the structure of the serial robot.
-% q is the joint values (radians or meters).
+% Inputs:
+%   r - structure of the serial robot.
+%   q - joint values (1xN_DOFS vector)
+%
+% Outputs:
+%   jac - computed jacobian matrix
 
 global N_DOFS;
 
