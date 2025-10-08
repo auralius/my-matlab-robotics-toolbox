@@ -20,103 +20,38 @@ function g = ncgr_plot_slider(g, r, view_vector, axis_scale, x_range, y_range, z
 global N_DOFS;
 qc = zeros(1, N_DOFS);
 
-max_reach = 1.5*max(sum(abs(r.d)), sum(abs(r.a)));
+g = ncgr_plot(g, r);
 
-if (g.h == -1) %  only do once
-    f = figure;
-    hold on;
-    grid on;
-    axis equal
+% Store app state via guidata
+S.sl = gobjects(N_DOFS, 1);
+S.last = nan(1, N_DOFS);  % last seen values for continuous change
 
-    if nargin < 3
-        view_vector = [1 1 1];
-        axis_scale = 0.5;
-
-        xlim([r.base(1) - max_reach r.base(1) + max_reach]);
-        ylim([r.base(2) - max_reach r.base(2) + max_reach]);
-        zlim([r.base(3) - max_reach r.base(3) + max_reach]);
-
-    elseif nargin < 4
-        axis_scale = 0.5;
-
-        xlim([r.base(1) - max_reach r.base(1) + max_reach]);
-        ylim([r.base(2) - max_reach r.base(2) + max_reach]);
-        zlim([r.base(3) - max_reach r.base(3) + max_reach]);
-
-    elseif nargin < 5
-        xlim([r.base(1) - max_reach r.base(1) + max_reach]);
-        ylim([r.base(2) - max_reach r.base(2) + max_reach]);
-        zlim([r.base(3) - max_reach r.base(3) + max_reach]);
-
-    elseif nargin < 6
-        xlim(x_range);
-        ylim([r.base(2)-max_reach r.base(2)+max_reach]);
-        zlim([r.base(3)-max_reach r.base(3)+max_reach]);
-
-    elseif nargin < 7
-        xlim(x_range);
-        ylim(y_range);
-        zlim([r.base(3) - max_reach r.base(3) + max_reach]);
-
-    else
-        xlim(x_range);
-        ylim(y_range);
-        zlim(z_range);
-    end
-
-    % Store app state via guidata
-    S.N = N_DOFS;
-    S.sl = gobjects(N_DOFS, 1);
-    S.last = nan(1, N_DOFS);  % last seen values for continuous change
-    S.minV = -pi;
-    S.maxV = pi;
-    guidata(f, S)
-
-    % --- Create sliders (tall+narrow = vertical look) ---
-    for k = 1 : N_DOFS
-        S = guidata(f);
-        S.sl(k) = uicontrol('Parent', f, ...
-            'Style', 'slider', ...
-            'Units', 'pixels', ...
-            'Min',S.minV, 'Max', S.maxV, 'Value', 0, ...
-            'SliderStep', [0.01 0.1], ...
-            'Callback',@(h,~)on_value_changed(f, k)); % when value changes
-        guidata(f, S);
-        qc(k) = 0;
-    end
-
-    % --- Layout + continuous polling on mouse move ---
-    f.SizeChangedFcn = @(h,~)do_layout(h);
-    f.WindowButtonMotionFcn = @(h,~)poll_while_dragging(h);  % continuous
-    f.CloseRequestFcn = @(h,~)on_close(h);
-    do_layout(f);      % initial placement
-    init_last(f);      % init last = Value
-
-    % --- Start plotting the robot ---
-    view(view_vector);
-    g.h = plot3(0, 0, 0, '-m*', 'LineWidth', 4);
-
-    g.quiver_x = quiver3(0,0,0,0,0,0, axis_scale, 'r', 'LineWidth', 2);
-    g.quiver_y = quiver3(0,0,0,0,0,0, axis_scale, 'g', 'LineWidth', 2);
-    g.quiver_z = quiver3(0,0,0,0,0,0, axis_scale, 'b', 'LineWidth', 2);
-
-    xlabel('x');
-    ylabel('y');
-    zlabel('z');
-
-    for i = 0 : N_DOFS
-        g.htxt(i+1) = text(0,0,0, num2str(i), 'FontWeight', 'bold');
-    end
-
-    set(g.htxt(1), 'Position', r.base);
+% --- Create sliders (tall+narrow = vertical look) ---
+for k = 1 : N_DOFS
+    S = guidata(g.f);
+    S.sl(k) = uicontrol('Parent', g.f, ...
+        'Style', 'slider', ...
+        'Units', 'pixels', ...
+        'Min',r.lb(k), 'Max', r.ub(k), 'Value', 0, ...
+        'SliderStep', [0.01 0.1], ...
+        'Callback',@(h,~)on_value_changed(g.f, k)); % when value changes
+    guidata(g.f, S);
+    qc(k) = 0;
 end
+
+% --- Layout + continuous polling on mouse move ---
+g.f.SizeChangedFcn = @(h,~)do_layout(h);
+g.f.WindowButtonMotionFcn = @(h,~)poll_while_dragging(h);  % continuous
+g.f.CloseRequestFcn = @(h,~)on_close(h);
+do_layout(g.f);      % initial placement
+init_last(g.f);      % init last = Value
 
 for i = 1 : N_DOFS
     vx(:, i) = r.T(1:3, 1:3, i) * [1; 0; 0];
     vy(:, i) = r.T(1:3, 1:3, i) * [0; 1; 0];
     vz(:, i) = r.T(1:3, 1:3, i) * [0; 0; 1];
     x(:, i)  = r.T(1:3, 4  , i);
-    set(g.htxt(i+1), 'Position', x(:, i) + [0; 0; 0.2]);
+    set(g.htxt(i+1), 'Position', x(:, i) + [0; 0; 0.02]);
 end
 
 set(g.h, 'XData', [r.base(1) x(1, :)], 'YData', [r.base(2) x(2, :)], ...
@@ -130,6 +65,7 @@ set(g.quiver_z, 'XData', x(1, :), 'YData', x(2, :), 'ZData', x(3, :), ...
     'UData', vz(1,:), 'VData', vz(2,:), 'WData', vz(3,:));
 
 drawnow;
+guidata(g.f, S)
 
 % ===== Helpers =====
 
@@ -149,7 +85,7 @@ drawnow;
         usableH = max(pos(4) - topPad - botPad, 60);
         xRight = pos(3) - padRight;
 
-        for k = 1 : S.N
+        for k = 1 : N_DOFS
             set(S.sl(k), 'Position', [xRight - (k-1) * (barW + gap), ...
                 botPad, barW, usableH]);
         end
@@ -157,22 +93,22 @@ drawnow;
 
     function init_last(fig)
         S = guidata(fig);
-        for k = 1 : S.N
+        for k = 1 : N_DOFS
             S.last(k) = get(S.sl(k),'Value');
         end
-        guidata(fig,S);
+        guidata(fig, S);
     end
 
     function poll_while_dragging(fig)
-        % Simulate ValueChanging: whenever any slider's Value differs from 
-        % last, call on_value_changing and update last. 
+        % Simulate ValueChanging: whenever any slider's Value differs from
+        % last, call on_value_changing and update last.
         S = guidata(fig);
         if isempty(S) || ~isfield(S,'sl'), return; end
 
         changedIdx = [];
         newVals = S.last;
 
-        for k = 1:S.N
+        for k = 1:N_DOFS
             v = get(S.sl(k),'Value');
             if ~isequaln(v, S.last(k))
                 changedIdx(end+1) = k; %#ok<AGROW>

@@ -22,7 +22,7 @@ global N_DOFS;
 max_reach = 1.5*max(sum(abs(r.d)), sum(abs(r.a)));
 
 if (g.h == -1) % only do once
-    figure;
+    g.f = figure;
     hold on;
     grid on;
     axis equal
@@ -86,7 +86,7 @@ for i = 1 : N_DOFS
     vy(:, i) = r.T(1:3, 1:3, i) * [0; 1; 0];
     vz(:, i) = r.T(1:3, 1:3, i) * [0; 0; 1];
     x(:, i)  = r.T(1:3, 4  , i);
-    set(g.htxt(i+1), 'Position', x(:, i) + [0; 0; 0.2]);
+    set(g.htxt(i+1), 'Position', x(:, i) + [0; 0; 0.02]);
 end
 
 set(g.h, 'XData', [r.base(1) x(1, :)], 'YData', [r.base(2) x(2, :)], ...

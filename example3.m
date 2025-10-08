@@ -22,8 +22,8 @@ offset = [0 0 0];
 type = ['r' 'p' 'r'];
 base = [0; 0; 0];
 
-ex4 = cgr_create(theta, d, a, alpha, offset, type, base, ...
+ex3 = cgr_create(theta, d, a, alpha, offset, type, base, ...
                  [pi/2; 2; pi/2], [-pi/2; 0; -pi/2]);  % joint limts!
-ex4 = cgr_self_update(ex4, [0; 0; 0;], base);
-g = ncgr_plot_slider(g, ex4, [1 1 1], 0.3, [-0.2 0.2], [-0.1 1.0],[-0.1 0.5]);
+ex3 = cgr_self_update(ex3, [0; 0; 0;], base);
+g = ncgr_plot_slider(g, ex3, [1 1 1], 0.3, [-0.2 0.2], [-0.1 1.0],[-0.1 0.5]);
  
