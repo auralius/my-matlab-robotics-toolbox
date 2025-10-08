@@ -19,7 +19,7 @@ function g = ncgr_plot(g, r, view_vector, axis_scale, x_range, y_range, z_range)
 
 global N_DOFS;
 
-max_reach = 1.1*max(sum(abs(r.d)), sum(abs(r.a)));
+max_reach = 1.5*max(sum(abs(r.d)), sum(abs(r.a)));
 
 if (g.h == -1) % only do once
     figure;
@@ -66,9 +66,9 @@ if (g.h == -1) % only do once
     view(view_vector);
     g.h = plot3(0, 0, 0, '-m*', 'LineWidth', 4);    
 
-    g.quiver_x = quiver3(0,0,0,0,0,0, axis_scale, 'r');
-    g.quiver_y = quiver3(0,0,0,0,0,0, axis_scale, 'g');
-    g.quiver_z = quiver3(0,0,0,0,0,0, axis_scale, 'b');
+    g.quiver_x = quiver3(0,0,0,0,0,0, axis_scale, 'r', 'LineWidth', 2);
+    g.quiver_y = quiver3(0,0,0,0,0,0, axis_scale, 'g', 'LineWidth', 2);
+    g.quiver_z = quiver3(0,0,0,0,0,0, axis_scale, 'b', 'LineWidth', 2);
 
     xlabel('x');
     ylabel('y');

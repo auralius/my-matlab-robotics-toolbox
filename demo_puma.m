@@ -28,12 +28,14 @@ ub = [deg2rad(110)  deg2rad(240) deg2rad(60)   deg2rad(40)   deg2rad(110)  deg2r
 
 puma = cgr_create(theta, d, a, alpha, offset, type, base, ub, lb);
 puma = cgr_self_update(puma, [0 0 0 0 0 0]);
-g = ncgr_plot(g, puma, [1 1 1], 0.3, [-5 20], [-10 10], [0 20]);
+g = ncgr_plot(g, puma, [144 18], 0.5, [-5 20], [-10 10], [0 15]);
 
 
 %% Demo inverese kinematics
 x = puma.T(1:3,4, end);
-step = linspace(0, 10, 20);
+line([0 x(1)+10], [x(2) x(2)], [13 13], 'LineStyle', '--', 'Color', 'k')
+
+step = linspace(0, 10, 100);
 for i = 1:length(step)
     [q, k, err] = cgr_ikine1(puma, [x(1)+step(i); x(2); 13], 0.001, 1000);
     puma = cgr_self_update(puma, q);

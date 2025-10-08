@@ -26,6 +26,10 @@ How to use:
 
 [sshot]: https://raw.githubusercontent.com/auralius/my-matlab-robotics-toolbox/master/sshot.png "Screenshot"
 
+![Screenshot][sshot3]
+
+[sshot3]: https://raw.githubusercontent.com/auralius/my-matlab-robotics-toolbox/master/sshot3.png "Screenshot3"
+
 ![Screenshot][sshot2]
 
 [sshot2]: https://raw.githubusercontent.com/auralius/my-matlab-robotics-toolbox/master/sshot2.png "Screenshot2"
