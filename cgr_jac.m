@@ -11,7 +11,7 @@ function jac = cgr_jac(r, q)
 % Outputs:
 %   jac - computed jacobian matrix
 
-global N_DOFS;
+N_DOFS = length(q);
 
 epsilon = 1e-6; 
 epsilon_inv = 1/epsilon;

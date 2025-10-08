@@ -1,0 +1,790 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<coderProject client="MatlabCoder" containerVersion="1" createdBy="R2025a" modifiedBy="R2025a">
+  <layers>
+    <layer id="core" version="R2025a">
+      <parts>
+        <part role="testRepository">
+          <MF0 packageUris="http://schema.mathworks.com/mf0/coderapp_config_datamodel/R2021a.001 http://schema.mathworks.com/mf0/coderapp_core_proj_dm/R2025a http://schema.mathworks.com/mf0/coderapp_core_rt_dm/R2022b http://schema.mathworks.com/mf0/coderapp_form_datamodel/R2020a http://schema.mathworks.com/mf0/coderapp_gpucoder_proj_dm/R2025a http://schema.mathworks.com/mf0/coderapp_gpucoder_rt_dm/R2022b http://schema.mathworks.com/mf0/coderapp_matlabcoder_proj_dm/R2025a http://schema.mathworks.com/mf0/coderapp_matlabcoder_rt_dm/R2022b http://schema.mathworks.com/mf0/coderapp_types_project_datamodel/R2025a http://schema.mathworks.com/mf0/coderapp_types_runtime_datamodel/R2022b http://schema.mathworks.com/mf0/coderapp_utils_datamodel/R2020a" version="1.1">
+            <coderapp.internal.core.mfz.TestRepositoryState id="1" type="coderapp.internal.core.mfz.TestRepositoryState">
+              <Tests type="coderapp.internal.core.mfz.TestSpec">
+                <Type>FILE</Type>
+                <Value>/home/auralius/works/my-matlab-robotics-toolbox/test2.m</Value>
+              </Tests>
+            </coderapp.internal.core.mfz.TestRepositoryState>
+          </MF0>
+        </part>
+      </parts>
+    </layer>
+    <layer id="interface" version="R2025a">
+      <parts>
+        <part role="mainInterface">
+          <MF0 packageUris="http://schema.mathworks.com/mf0/coderapp_config_datamodel/R2021a.001 http://schema.mathworks.com/mf0/coderapp_core_proj_dm/R2025a http://schema.mathworks.com/mf0/coderapp_core_rt_dm/R2022b http://schema.mathworks.com/mf0/coderapp_form_datamodel/R2020a http://schema.mathworks.com/mf0/coderapp_gpucoder_proj_dm/R2025a http://schema.mathworks.com/mf0/coderapp_gpucoder_rt_dm/R2022b http://schema.mathworks.com/mf0/coderapp_matlabcoder_proj_dm/R2025a http://schema.mathworks.com/mf0/coderapp_matlabcoder_rt_dm/R2022b http://schema.mathworks.com/mf0/coderapp_types_project_datamodel/R2025a http://schema.mathworks.com/mf0/coderapp_types_runtime_datamodel/R2022b http://schema.mathworks.com/mf0/coderapp_utils_datamodel/R2020a" version="1.1">
+            <coderapp.internal.interface.project.Interface id="1" type="coderapp.internal.interface.project.Interface">
+              <EntryPoints id="2" type="coderapp.internal.interface.project.EntryPointFunction">
+                <Signatures id="3" type="coderapp.internal.interface.project.FunctionSignature">
+                  <Inputs id="4" type="coderapp.internal.interface.project.Input">
+                    <Name>theta</Name>
+                    <Type id="5" type="coderapp.internal.codertype.PrimitiveType"/>
+                  </Inputs>
+                  <Inputs id="6" type="coderapp.internal.interface.project.Input">
+                    <Name>d</Name>
+                    <Type id="5" type="coderapp.internal.codertype.PrimitiveType"/>
+                  </Inputs>
+                  <Inputs id="7" type="coderapp.internal.interface.project.Input">
+                    <Name>a</Name>
+                    <Type id="5" type="coderapp.internal.codertype.PrimitiveType"/>
+                  </Inputs>
+                  <Inputs id="8" type="coderapp.internal.interface.project.Input">
+                    <Name>alpha</Name>
+                    <Type id="5" type="coderapp.internal.codertype.PrimitiveType"/>
+                  </Inputs>
+                  <Inputs id="9" type="coderapp.internal.interface.project.Input">
+                    <Name>offset</Name>
+                    <Type id="5" type="coderapp.internal.codertype.PrimitiveType"/>
+                  </Inputs>
+                  <Inputs id="10" type="coderapp.internal.interface.project.Input">
+                    <Name>type</Name>
+                    <Type id="11" type="coderapp.internal.codertype.PrimitiveType"/>
+                  </Inputs>
+                  <Inputs id="12" type="coderapp.internal.interface.project.Input">
+                    <Name>base</Name>
+                    <Type id="13" type="coderapp.internal.codertype.PrimitiveType"/>
+                  </Inputs>
+                  <Inputs id="14" type="coderapp.internal.interface.project.Input">
+                    <Name>ub</Name>
+                    <Type id="15" type="coderapp.internal.codertype.PrimitiveType"/>
+                  </Inputs>
+                  <Inputs id="16" type="coderapp.internal.interface.project.Input">
+                    <Name>lb</Name>
+                    <Type id="15" type="coderapp.internal.codertype.PrimitiveType"/>
+                  </Inputs>
+                  <NumOutputs>1</NumOutputs>
+                </Signatures>
+                <File type="coderapp.internal.util.mfz.FileSpec">
+                  <Path>cgr_create.m</Path>
+                </File>
+                <Name>cgr_create</Name>
+              </EntryPoints>
+              <EntryPoints id="17" type="coderapp.internal.interface.project.EntryPointFunction">
+                <Signatures id="18" type="coderapp.internal.interface.project.FunctionSignature">
+                  <Inputs id="19" type="coderapp.internal.interface.project.Input">
+                    <Name>r</Name>
+                    <Type id="20" type="coderapp.internal.codertype.StructType"/>
+                  </Inputs>
+                  <Inputs id="21" type="coderapp.internal.interface.project.Input">
+                    <Name>q</Name>
+                    <Type id="15" type="coderapp.internal.codertype.PrimitiveType"/>
+                  </Inputs>
+                  <NumOutputs>1</NumOutputs>
+                </Signatures>
+                <File type="coderapp.internal.util.mfz.FileSpec">
+                  <Path>cgr_fkine.m</Path>
+                </File>
+                <Name>cgr_fkine</Name>
+              </EntryPoints>
+              <EntryPoints id="22" type="coderapp.internal.interface.project.EntryPointFunction">
+                <Signatures id="23" type="coderapp.internal.interface.project.FunctionSignature">
+                  <Inputs id="24" type="coderapp.internal.interface.project.Input">
+                    <Name>r</Name>
+                    <Type id="20" type="coderapp.internal.codertype.StructType"/>
+                  </Inputs>
+                  <Inputs id="25" type="coderapp.internal.interface.project.Input">
+                    <Name>q</Name>
+                    <Type id="15" type="coderapp.internal.codertype.PrimitiveType"/>
+                  </Inputs>
+                  <NumOutputs>2</NumOutputs>
+                </Signatures>
+                <File type="coderapp.internal.util.mfz.FileSpec">
+                  <Path>cgr_fkine_ee.m</Path>
+                </File>
+                <Name>cgr_fkine_ee</Name>
+              </EntryPoints>
+              <EntryPoints id="26" type="coderapp.internal.interface.project.EntryPointFunction">
+                <Signatures id="27" type="coderapp.internal.interface.project.FunctionSignature">
+                  <Inputs id="28" type="coderapp.internal.interface.project.Input">
+                    <Name>r</Name>
+                    <Type id="20" type="coderapp.internal.codertype.StructType"/>
+                  </Inputs>
+                  <Inputs id="29" type="coderapp.internal.interface.project.Input">
+                    <Name>p</Name>
+                    <Type id="13" type="coderapp.internal.codertype.PrimitiveType"/>
+                  </Inputs>
+                  <Inputs id="30" type="coderapp.internal.interface.project.Input">
+                    <Name>treshold</Name>
+                    <Type id="31" type="coderapp.internal.codertype.PrimitiveType"/>
+                  </Inputs>
+                  <Inputs id="32" type="coderapp.internal.interface.project.Input">
+                    <Name>max_iter</Name>
+                    <Type id="31" type="coderapp.internal.codertype.PrimitiveType"/>
+                  </Inputs>
+                  <NumOutputs>3</NumOutputs>
+                </Signatures>
+                <File type="coderapp.internal.util.mfz.FileSpec">
+                  <Path>cgr_ikine1.m</Path>
+                </File>
+                <Name>cgr_ikine1</Name>
+              </EntryPoints>
+              <EntryPoints id="33" type="coderapp.internal.interface.project.EntryPointFunction">
+                <Signatures id="34" type="coderapp.internal.interface.project.FunctionSignature">
+                  <Inputs id="35" type="coderapp.internal.interface.project.Input">
+                    <Name>r</Name>
+                    <Type id="20" type="coderapp.internal.codertype.StructType"/>
+                  </Inputs>
+                  <Inputs id="36" type="coderapp.internal.interface.project.Input">
+                    <Name>p</Name>
+                    <Type id="13" type="coderapp.internal.codertype.PrimitiveType"/>
+                  </Inputs>
+                  <Inputs id="37" type="coderapp.internal.interface.project.Input">
+                    <Name>lambda</Name>
+                    <Type id="31" type="coderapp.internal.codertype.PrimitiveType"/>
+                  </Inputs>
+                  <Inputs id="38" type="coderapp.internal.interface.project.Input">
+                    <Name>treshold</Name>
+                    <Type id="31" type="coderapp.internal.codertype.PrimitiveType"/>
+                  </Inputs>
+                  <Inputs id="39" type="coderapp.internal.interface.project.Input">
+                    <Name>max_iter</Name>
+                    <Type id="31" type="coderapp.internal.codertype.PrimitiveType"/>
+                  </Inputs>
+                  <NumOutputs>3</NumOutputs>
+                </Signatures>
+                <File type="coderapp.internal.util.mfz.FileSpec">
+                  <Path>cgr_ikine2.m</Path>
+                </File>
+                <Name>cgr_ikine2</Name>
+              </EntryPoints>
+              <EntryPoints id="40" type="coderapp.internal.interface.project.EntryPointFunction">
+                <Signatures id="41" type="coderapp.internal.interface.project.FunctionSignature">
+                  <Inputs id="42" type="coderapp.internal.interface.project.Input">
+                    <Name>r</Name>
+                    <Type id="20" type="coderapp.internal.codertype.StructType"/>
+                  </Inputs>
+                  <Inputs id="43" type="coderapp.internal.interface.project.Input">
+                    <Name>q</Name>
+                    <Type id="15" type="coderapp.internal.codertype.PrimitiveType"/>
+                  </Inputs>
+                  <NumOutputs>1</NumOutputs>
+                </Signatures>
+                <File type="coderapp.internal.util.mfz.FileSpec">
+                  <Path>cgr_jac.m</Path>
+                </File>
+                <Name>cgr_jac</Name>
+              </EntryPoints>
+              <EntryPoints id="44" type="coderapp.internal.interface.project.EntryPointFunction">
+                <Signatures id="45" type="coderapp.internal.interface.project.FunctionSignature">
+                  <Inputs id="46" type="coderapp.internal.interface.project.Input">
+                    <Name>r</Name>
+                    <Type id="20" type="coderapp.internal.codertype.StructType"/>
+                  </Inputs>
+                  <Inputs id="47" type="coderapp.internal.interface.project.Input">
+                    <Name>qc</Name>
+                    <Type id="15" type="coderapp.internal.codertype.PrimitiveType"/>
+                  </Inputs>
+                  <Inputs id="48" type="coderapp.internal.interface.project.Input">
+                    <Name>base</Name>
+                    <Type id="13" type="coderapp.internal.codertype.PrimitiveType"/>
+                  </Inputs>
+                  <NumOutputs>1</NumOutputs>
+                </Signatures>
+                <File type="coderapp.internal.util.mfz.FileSpec">
+                  <Path>cgr_self_update.m</Path>
+                </File>
+                <Name>cgr_self_update</Name>
+              </EntryPoints>
+              <SizeConstraints id="49" type="coderapp.internal.interface.project.SizeConstraints">
+                <Value type="coderapp.internal.interface.project.SizeConstraintsValue"/>
+              </SizeConstraints>
+              <Types id="50" type="coderapp.internal.codertype.TypeStore">
+                <Types id="5" type="coderapp.internal.codertype.PrimitiveType">
+                  <ClassName>double</ClassName>
+                  <Size type="coderapp.internal.codertype.Dimension"/>
+                  <Size type="coderapp.internal.codertype.Dimension">
+                    <Length>4</Length>
+                  </Size>
+                </Types>
+                <Types id="11" type="coderapp.internal.codertype.PrimitiveType">
+                  <ClassName>char</ClassName>
+                  <Size type="coderapp.internal.codertype.Dimension"/>
+                  <Size type="coderapp.internal.codertype.Dimension">
+                    <Length>4</Length>
+                  </Size>
+                </Types>
+                <Types id="13" type="coderapp.internal.codertype.PrimitiveType">
+                  <ClassName>double</ClassName>
+                  <Size type="coderapp.internal.codertype.Dimension">
+                    <Length>3</Length>
+                  </Size>
+                  <Size type="coderapp.internal.codertype.Dimension"/>
+                </Types>
+                <Types id="15" type="coderapp.internal.codertype.PrimitiveType">
+                  <ClassName>double</ClassName>
+                  <Size type="coderapp.internal.codertype.Dimension">
+                    <Length>4</Length>
+                  </Size>
+                  <Size type="coderapp.internal.codertype.Dimension"/>
+                </Types>
+                <Types id="51" type="coderapp.internal.codertype.PrimitiveType">
+                  <ClassName>double</ClassName>
+                  <Size type="coderapp.internal.codertype.Dimension">
+                    <Length>3</Length>
+                  </Size>
+                  <Size type="coderapp.internal.codertype.Dimension">
+                    <Length>4</Length>
+                  </Size>
+                </Types>
+                <Types id="52" type="coderapp.internal.codertype.PrimitiveType">
+                  <ClassName>double</ClassName>
+                  <Size type="coderapp.internal.codertype.Dimension">
+                    <Length>4</Length>
+                  </Size>
+                  <Size type="coderapp.internal.codertype.Dimension">
+                    <Length>4</Length>
+                  </Size>
+                  <Size type="coderapp.internal.codertype.Dimension">
+                    <Length>4</Length>
+                  </Size>
+                </Types>
+                <Types id="20" type="coderapp.internal.codertype.StructType">
+                  <Fields id="53" type="coderapp.internal.codertype.Property">
+                    <Name>base</Name>
+                    <Type id="13" type="coderapp.internal.codertype.PrimitiveType"/>
+                  </Fields>
+                  <Fields id="54" type="coderapp.internal.codertype.Property">
+                    <Name>theta</Name>
+                    <Type id="5" type="coderapp.internal.codertype.PrimitiveType"/>
+                  </Fields>
+                  <Fields id="55" type="coderapp.internal.codertype.Property">
+                    <Name>d</Name>
+                    <Type id="5" type="coderapp.internal.codertype.PrimitiveType"/>
+                  </Fields>
+                  <Fields id="56" type="coderapp.internal.codertype.Property">
+                    <Name>a</Name>
+                    <Type id="5" type="coderapp.internal.codertype.PrimitiveType"/>
+                  </Fields>
+                  <Fields id="57" type="coderapp.internal.codertype.Property">
+                    <Name>alpha</Name>
+                    <Type id="5" type="coderapp.internal.codertype.PrimitiveType"/>
+                  </Fields>
+                  <Fields id="58" type="coderapp.internal.codertype.Property">
+                    <Name>offset</Name>
+                    <Type id="5" type="coderapp.internal.codertype.PrimitiveType"/>
+                  </Fields>
+                  <Fields id="59" type="coderapp.internal.codertype.Property">
+                    <Name>qc</Name>
+                    <Type id="15" type="coderapp.internal.codertype.PrimitiveType"/>
+                  </Fields>
+                  <Fields id="60" type="coderapp.internal.codertype.Property">
+                    <Name>type</Name>
+                    <Type id="11" type="coderapp.internal.codertype.PrimitiveType"/>
+                  </Fields>
+                  <Fields id="61" type="coderapp.internal.codertype.Property">
+                    <Name>jac</Name>
+                    <Type id="51" type="coderapp.internal.codertype.PrimitiveType"/>
+                  </Fields>
+                  <Fields id="62" type="coderapp.internal.codertype.Property">
+                    <Name>T</Name>
+                    <Type id="52" type="coderapp.internal.codertype.PrimitiveType"/>
+                  </Fields>
+                  <Fields id="63" type="coderapp.internal.codertype.Property">
+                    <Name>ub</Name>
+                    <Type id="15" type="coderapp.internal.codertype.PrimitiveType"/>
+                  </Fields>
+                  <Fields id="64" type="coderapp.internal.codertype.Property">
+                    <Name>lb</Name>
+                    <Type id="15" type="coderapp.internal.codertype.PrimitiveType"/>
+                  </Fields>
+                  <ClassName>struct</ClassName>
+                  <Size type="coderapp.internal.codertype.Dimension"/>
+                  <Size type="coderapp.internal.codertype.Dimension"/>
+                </Types>
+                <Types id="31" type="coderapp.internal.codertype.PrimitiveType">
+                  <ClassName>double</ClassName>
+                  <Size type="coderapp.internal.codertype.Dimension"/>
+                  <Size type="coderapp.internal.codertype.Dimension"/>
+                </Types>
+              </Types>
+            </coderapp.internal.interface.project.Interface>
+          </MF0>
+        </part>
+      </parts>
+    </layer>
+    <layer id="matlabCoder" version="R2025a">
+      <parts>
+        <part role="matlabCoder">
+          <MF0 packageUris="http://schema.mathworks.com/mf0/coderapp_config_datamodel/R2021a.001 http://schema.mathworks.com/mf0/coderapp_core_proj_dm/R2025a http://schema.mathworks.com/mf0/coderapp_core_rt_dm/R2022b http://schema.mathworks.com/mf0/coderapp_form_datamodel/R2020a http://schema.mathworks.com/mf0/coderapp_gpucoder_proj_dm/R2025a http://schema.mathworks.com/mf0/coderapp_gpucoder_rt_dm/R2022b http://schema.mathworks.com/mf0/coderapp_matlabcoder_proj_dm/R2025a http://schema.mathworks.com/mf0/coderapp_matlabcoder_rt_dm/R2022b http://schema.mathworks.com/mf0/coderapp_types_project_datamodel/R2025a http://schema.mathworks.com/mf0/coderapp_types_runtime_datamodel/R2022b http://schema.mathworks.com/mf0/coderapp_utils_datamodel/R2020a" version="1.1">
+            <coderapp.internal.mlc.mfz.MatlabCoderProjectState id="1" type="coderapp.internal.mlc.mfz.MatlabCoderProjectState">
+              <WorkflowTarget>DLL</WorkflowTarget>
+              <Activity id="2" type="coderapp.internal.mlc.mfz.MainBuildActivity">
+                <Compile>SUCCESS</Compile>
+                <Generate>SUCCESS</Generate>
+                <TargetHardware>MATLAB Host Computer</TargetHardware>
+                <TargetLanguage>C</TargetLanguage>
+                <WorkflowTarget>DLL</WorkflowTarget>
+                <Result id="3" type="coderapp.internal.mlc.mfz.MatlabCoderCodegenResult"/>
+              </Activity>
+              <MainBuildResult id="3" type="coderapp.internal.mlc.mfz.MatlabCoderCodegenResult">
+                <WorkflowTarget>DLL</WorkflowTarget>
+                <LogDirectory>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4</LogDirectory>
+                <MainReport id="4" type="coderapp.internal.build.mfz.CodegenArtifact"/>
+                <OutputFile>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/kine4.so</OutputFile>
+                <Artifacts id="4" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <SubType>CODEGEN_REPORT</SubType>
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/html/report.mldatx</Path>
+                  </File>
+                  <Type>CODEGEN_REPORT</Type>
+                </Artifacts>
+                <Artifacts id="5" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <SubType>LIBRARY</SubType>
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/kine4.so</Path>
+                  </File>
+                  <Type>BINARY</Type>
+                </Artifacts>
+                <Artifacts id="6" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/cgr_create.c</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="7" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/cgr_create.h</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="8" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/cgr_fkine.c</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="9" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/cgr_fkine.h</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="10" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/cgr_fkine_ee.c</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="11" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/cgr_fkine_ee.h</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="12" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/cgr_ikine1.c</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="13" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/cgr_ikine1.h</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="14" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/cgr_ikine2.c</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="15" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/cgr_ikine2.h</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="16" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/cgr_jac.c</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="17" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/cgr_jac.h</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="18" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/cgr_self_update.c</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="19" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/cgr_self_update.h</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="20" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/eye.c</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="21" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/eye.h</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="22" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/kine4_data.c</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="23" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/kine4_data.h</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="24" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/kine4_initialize.c</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="25" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/kine4_initialize.h</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="26" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/kine4_terminate.c</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="27" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/kine4_terminate.h</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="28" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/kine4_types.h</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="29" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/mldivide.c</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="30" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/mldivide.h</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="31" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/norm.c</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="32" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/norm.h</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="33" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/pinv.c</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="34" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/pinv.h</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="35" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/repmat.c</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="36" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/repmat.h</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="37" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/rtGetInf.c</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="38" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/rtGetInf.h</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="39" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/rtGetNaN.c</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="40" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/rtGetNaN.h</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="41" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/rt_nonfinite.c</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="42" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/rt_nonfinite.h</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="43" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/rtwtypes.h</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="44" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/svd.c</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="45" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/svd.h</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="46" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/xaxpy.c</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="47" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/xaxpy.h</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="48" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/xdotc.c</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="49" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/xdotc.h</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="50" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/xnrm2.c</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="51" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/xnrm2.h</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="52" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/xrot.c</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="53" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/xrot.h</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="54" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/xrotg.c</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="55" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/xrotg.h</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="56" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/xswap.c</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="57" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/xswap.h</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="58" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/xzlangeM.c</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="59" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/xzlangeM.h</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="60" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/xzlascl.c</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="61" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/xzlascl.h</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="62" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/opt/MATLAB/R2025a/extern/include/tmwtypes.h</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="63" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/examples/main.c</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <Artifacts id="64" type="coderapp.internal.build.mfz.CodegenArtifact">
+                  <File type="coderapp.internal.util.mfz.FileSpec">
+                    <Path>/home/auralius/works/my-matlab-robotics-toolbox/codegen/dll/kine4/examples/main.h</Path>
+                  </File>
+                  <Type>GENERATED_SOURCE</Type>
+                </Artifacts>
+                <BuildFolder type="coderapp.internal.util.mfz.FileSpec"/>
+                <Success>true</Success>
+                <Timestamp>2025-10-09T04:22:23</Timestamp>
+              </MainBuildResult>
+            </coderapp.internal.mlc.mfz.MatlabCoderProjectState>
+          </MF0>
+        </part>
+        <part role="standaloneConfig">
+          <MF0 packageUris="http://schema.mathworks.com/mf0/coderapp_config_datamodel/R2021a.001 http://schema.mathworks.com/mf0/coderapp_core_proj_dm/R2025a http://schema.mathworks.com/mf0/coderapp_core_rt_dm/R2022b http://schema.mathworks.com/mf0/coderapp_form_datamodel/R2020a http://schema.mathworks.com/mf0/coderapp_gpucoder_proj_dm/R2025a http://schema.mathworks.com/mf0/coderapp_gpucoder_rt_dm/R2022b http://schema.mathworks.com/mf0/coderapp_matlabcoder_proj_dm/R2025a http://schema.mathworks.com/mf0/coderapp_matlabcoder_rt_dm/R2022b http://schema.mathworks.com/mf0/coderapp_types_project_datamodel/R2025a http://schema.mathworks.com/mf0/coderapp_types_runtime_datamodel/R2022b http://schema.mathworks.com/mf0/coderapp_utils_datamodel/R2020a" version="1.1">
+            <coderapp.internal.ext.ConfigStore id="1" type="coderapp.internal.ext.ConfigStore">
+              <Values id="2" type="coderapp.internal.ext.ConfigEntry">
+                <Key>outputFile</Key>
+                <Data id="3" type="coderapp.internal.config.data.StringParamData">
+                  <Value>kine4</Value>
+                  <Help type="coderapp.internal.util.DocRef"/>
+                </Data>
+              </Values>
+              <Values id="4" type="coderapp.internal.ext.ConfigEntry">
+                <Key>prodBitPerLong</Key>
+                <Data id="5" type="coderapp.internal.config.data.IntegerParamData">
+                  <Value>32</Value>
+                  <Help type="coderapp.internal.util.DocRef"/>
+                </Data>
+              </Values>
+              <Values id="6" type="coderapp.internal.ext.ConfigEntry">
+                <Key>prodBitPerPointer</Key>
+                <Data id="7" type="coderapp.internal.config.data.IntegerParamData">
+                  <Value>32</Value>
+                  <Help type="coderapp.internal.util.DocRef"/>
+                </Data>
+              </Values>
+              <Values id="8" type="coderapp.internal.ext.ConfigEntry">
+                <Key>prodLongLongMode</Key>
+                <Data id="9" type="coderapp.internal.config.data.BooleanParamData">
+                  <Help type="coderapp.internal.util.DocRef"/>
+                </Data>
+              </Values>
+              <Values id="10" type="coderapp.internal.ext.ConfigEntry">
+                <Key>prodWordSize</Key>
+                <Data id="11" type="coderapp.internal.config.data.IntegerParamData">
+                  <Value>32</Value>
+                  <Help type="coderapp.internal.util.DocRef"/>
+                </Data>
+              </Values>
+              <Values id="12" type="coderapp.internal.ext.ConfigEntry">
+                <Key>targetBitPerLong</Key>
+                <Data id="13" type="coderapp.internal.config.data.IntegerParamData">
+                  <Value>32</Value>
+                  <Help type="coderapp.internal.util.DocRef"/>
+                </Data>
+              </Values>
+              <Values id="14" type="coderapp.internal.ext.ConfigEntry">
+                <Key>targetBitPerPointer</Key>
+                <Data id="15" type="coderapp.internal.config.data.IntegerParamData">
+                  <Value>32</Value>
+                  <Help type="coderapp.internal.util.DocRef"/>
+                </Data>
+              </Values>
+              <Values id="16" type="coderapp.internal.ext.ConfigEntry">
+                <Key>targetLangStandard</Key>
+                <Data id="17" type="coderapp.internal.config.data.EnumParamData">
+                  <Value>C89/C90 (ANSI)</Value>
+                  <Help type="coderapp.internal.util.DocRef"/>
+                </Data>
+              </Values>
+              <Values id="18" type="coderapp.internal.ext.ConfigEntry">
+                <Key>targetLongLongMode</Key>
+                <Data id="19" type="coderapp.internal.config.data.BooleanParamData">
+                  <Help type="coderapp.internal.util.DocRef"/>
+                </Data>
+              </Values>
+              <Values id="20" type="coderapp.internal.ext.ConfigEntry">
+                <Key>targetWordSize</Key>
+                <Data id="21" type="coderapp.internal.config.data.IntegerParamData">
+                  <Value>32</Value>
+                  <Help type="coderapp.internal.util.DocRef"/>
+                </Data>
+              </Values>
+            </coderapp.internal.ext.ConfigStore>
+          </MF0>
+        </part>
+        <part role="mexConfig">
+          <MF0 packageUris="http://schema.mathworks.com/mf0/coderapp_config_datamodel/R2021a.001 http://schema.mathworks.com/mf0/coderapp_core_proj_dm/R2025a http://schema.mathworks.com/mf0/coderapp_core_rt_dm/R2022b http://schema.mathworks.com/mf0/coderapp_form_datamodel/R2020a http://schema.mathworks.com/mf0/coderapp_gpucoder_proj_dm/R2025a http://schema.mathworks.com/mf0/coderapp_gpucoder_rt_dm/R2022b http://schema.mathworks.com/mf0/coderapp_matlabcoder_proj_dm/R2025a http://schema.mathworks.com/mf0/coderapp_matlabcoder_rt_dm/R2022b http://schema.mathworks.com/mf0/coderapp_types_project_datamodel/R2025a http://schema.mathworks.com/mf0/coderapp_types_runtime_datamodel/R2022b http://schema.mathworks.com/mf0/coderapp_utils_datamodel/R2020a" version="1.1">
+            <coderapp.internal.ext.ConfigStore id="1" type="coderapp.internal.ext.ConfigStore"/>
+          </MF0>
+        </part>
+      </parts>
+    </layer>
+    <layer id="gpuCoder" version="R2025a">
+      <parts/>
+    </layer>
+  </layers>
+</coderProject>

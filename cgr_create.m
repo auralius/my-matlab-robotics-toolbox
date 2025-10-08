@@ -31,7 +31,7 @@ function robot = cgr_create(theta, d, a, alpha, offset, type, base, ub, lb)
 %     [pi/2; pi/2], [-pi/2; -pi/2;]);  
 %
 
-global N_DOFS;
+N_DOFS = length(theta);
 
 if ~iscolumn(base)
     error('>> The base coordinate must be a column vactor (3x1)!');

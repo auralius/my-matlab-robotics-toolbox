@@ -6,9 +6,6 @@ close all;
 %% Graphic
 g = ncgr_graphic();
 
-global N_DOFS;
-N_DOFS = 3;
-
 %% R-P robot DH-Parameters
 L1 = 0.1;
 L3 = 0.3;
@@ -25,5 +22,5 @@ base = [0; 0; 0];
 ex3 = cgr_create(theta, d, a, alpha, offset, type, base, ...
                  [pi/2; 2; pi/2], [-pi/2; 0; -pi/2]);  % joint limts!
 ex3 = cgr_self_update(ex3, [0; 0; 0;], base);
-g = ncgr_plot_slider(g, ex3, [1 1 1], 0.3, [-0.2 0.2], [-0.1 1.0],[-0.1 0.5]);
+g = ncgr_plot_slider(g, ex3, [1 1 1], 0.1, [-1 1], [-0.1 1.0],[-0.1 0.5]);
  

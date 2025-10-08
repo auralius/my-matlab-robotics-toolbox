@@ -18,7 +18,7 @@ function T = cgr_fkine(r, q)
 %   https://www.cs.duke.edu/brd/Teaching/Bio/asmb/current/Papers/chap3-forward-kinematics.pdf
 %   See page 75
 
-global N_DOFS;
+N_DOFS = length(q);
 
 temp = eye(4);
 T = repmat(zeros(4), 1, 1, N_DOFS);

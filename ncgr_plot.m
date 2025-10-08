@@ -17,9 +17,35 @@ function g = ncgr_plot(g, r, view_vector, axis_scale, x_range, y_range, z_range)
 % Contact: manurung.auralius@gmail.com
 %
 
-global N_DOFS;
+N_DOFS = length(r.theta);
 
 max_reach = 1.5*max(sum(abs(r.d)), sum(abs(r.a)));
+
+if nargin < 3
+    view_vector = [1 1 1];
+    axis_scale = 0.3;
+    x_range = [r.base(1)-max_reach r.base(1)+max_reach];
+    y_range = [r.base(2)-max_reach r.base(2)+max_reach];
+    z_range = [r.base(3)-max_reach r.base(3)+max_reach];
+
+elseif nargin < 4
+    axis_scale = 0.3;
+    x_range = [r.base(1)-max_reach r.base(1)+max_reach];
+    y_range = [r.base(2)-max_reach r.base(2)+max_reach];
+    z_range = [r.base(3)-max_reach r.base(3)+max_reach];
+
+elseif nargin < 5
+    x_range = [r.base(1)-max_reach r.base(1)+max_reach];
+    y_range = [r.base(2)-max_reach r.base(2)+max_reach];
+    z_range = [r.base(3)-max_reach r.base(3)+max_reach];
+
+elseif nargin < 6
+    y_range = [r.base(2)-max_reach r.base(2)+max_reach];
+    z_range = [r.base(3)-max_reach r.base(3)+max_reach];
+
+elseif nargin < 7
+    z_range = [r.base(3)-max_reach r.base(3)+max_reach];
+end
 
 if (g.h == -1) % only do once
     g.f = figure;
@@ -27,48 +53,16 @@ if (g.h == -1) % only do once
     grid on;
     axis equal
 
-    if nargin < 3
-        view_vector = [1 1 1];
-        axis_scale = 0.5;
+    xlim(x_range);
+    ylim(y_range);
+    zlim(z_range);
 
-        xlim([r.base(1)-max_reach r.base(1)+max_reach]);
-        ylim([r.base(2)-max_reach r.base(2)+max_reach]);
-        zlim([r.base(3)-max_reach r.base(3)+max_reach]);
-
-    elseif nargin < 4
-        axis_scale = 0.5;
-
-        xlim([r.base(1)-max_reach r.base(1)+max_reach]);
-        ylim([r.base(2)-max_reach r.base(2)+max_reach]);
-        zlim([r.base(3)-max_reach r.base(3)+max_reach]);
-
-    elseif nargin < 5
-        xlim([r.base(1)-max_reach r.base(1)+max_reach]);
-        ylim([r.base(2)-max_reach r.base(2)+max_reach]);
-        zlim([r.base(3)-max_reach r.base(3)+max_reach]);
-
-    elseif nargin < 6
-        xlim(x_range);
-        ylim([r.base(2)-max_reach r.base(2)+max_reach]);
-        zlim([r.base(3)-max_reach r.base(3)+max_reach]);
-
-    elseif nargin < 7
-        xlim(x_range);
-        ylim(y_range);
-        zlim([r.base(3)-max_reach r.base(3)+max_reach]);
-
-    else
-        xlim(x_range);
-        ylim(y_range);
-        zlim(z_range);
-    end
-    
     view(view_vector);
     g.h = plot3(0, 0, 0, '-m*', 'LineWidth', 4);    
 
-    g.quiver_x = quiver3(0,0,0,0,0,0, axis_scale, 'r', 'LineWidth', 2);
-    g.quiver_y = quiver3(0,0,0,0,0,0, axis_scale, 'g', 'LineWidth', 2);
-    g.quiver_z = quiver3(0,0,0,0,0,0, axis_scale, 'b', 'LineWidth', 2);
+    g.quiver_x = quiver3(0,0,0,0,0,0, 'Color', 'r', 'LineWidth', 2, 'AutoScale', 'off');
+    g.quiver_y = quiver3(0,0,0,0,0,0, 'Color', 'g', 'LineWidth', 2, 'AutoScale', 'off');
+    g.quiver_z = quiver3(0,0,0,0,0,0, 'Color', 'b', 'LineWidth', 2, 'AutoScale', 'off');
 
     xlabel('x');
     ylabel('y');
@@ -83,8 +77,11 @@ end
 
 for i = 1 : N_DOFS
     vx(:, i) = r.T(1:3, 1:3, i) * [1; 0; 0];
+    vx(:, i) = vx(:, i) / norm(vx(:, i))  * axis_scale;
     vy(:, i) = r.T(1:3, 1:3, i) * [0; 1; 0];
+    vy(:, i) = vy(:, i) / norm(vy(:, i)) * axis_scale;
     vz(:, i) = r.T(1:3, 1:3, i) * [0; 0; 1];
+    vz(:, i) = vz(:, i) / norm(vz(:, i)) * axis_scale ;
     x(:, i)  = r.T(1:3, 4  , i);
     set(g.htxt(i+1), 'Position', x(:, i) + [0; 0; 0.02]);
 end

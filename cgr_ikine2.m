@@ -17,7 +17,7 @@ function [q, iter_taken, err] = cgr_ikine2(r, p, lambda, treshold, max_iter)
 %   err - actual error between the actual position and the target position
 %
 
-global N_DOFS;
+N_DOFS = length(r.theta);
 
 if nargin  < 3
     treshold = 0.01;

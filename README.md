@@ -16,7 +16,6 @@ Features:
 * Code generation ready.
 
 How to use:
-* Create a global variable N_DOFS and define the number of degree-of-freedom of the robot in it. The reason why global variable is used is because I keep having problems in using the dynamic memory allocation for MATLAB coder. Therefore, I use global variable to define the dimension of the necessary static arrays.
 * Create the robot structure with **cgr_create**.
 * Actuate and update the joint with **cgr_self_update** functions.
 * If necessary, plot the robot with **ncgr_plot** by first calling **ncgr_graphic** once at the beginning of the program.
