@@ -18,6 +18,7 @@ function g = ncgr_plot_slider(g, r, view_vector, axis_scale, x_range, y_range, z
 %
 
 global N_DOFS;
+qc = zeros(1, N_DOFS);
 
 max_reach = 1.5*max(sum(abs(r.d)), sum(abs(r.a)));
 
@@ -77,10 +78,11 @@ if (g.h == -1) %  only do once
         S.sl(k) = uicontrol('Parent', f, ...
             'Style', 'slider', ...
             'Units', 'pixels', ...
-            'Min',S.minV, 'Max', S.maxV, 'Value',0, ...
+            'Min',S.minV, 'Max', S.maxV, 'Value', 0, ...
             'SliderStep', [0.01 0.1], ...
             'Callback',@(h,~)on_value_changed(f, k)); % when value changes
         guidata(f, S);
+        qc(k) = 0;
     end
 
     % --- Layout + continuous polling on mouse move ---
@@ -190,8 +192,8 @@ drawnow;
 
     function on_value_changing(fig, idx, val)
         % Continuous event (while dragging)
-        r.theta(idx) = val;
-        r = cgr_self_update(r, r.theta);
+        qc(idx) = val;
+        r = cgr_self_update(r, qc);
         g = ncgr_plot(g, r);
     end
 
