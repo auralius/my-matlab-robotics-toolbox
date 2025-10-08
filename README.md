@@ -22,9 +22,9 @@ How to use:
 * If necessary, plot the robot with **ncgr_plot** by first calling **ncgr_graphic** once at the beginning of the program.
 * To create the compiled MEX or DLL files, two examples of MATLAB Coder project files  are provided. This is where the global variable is used.
 
-![Some kinematics problems to try out!][slides]
+[Here are some kinematics problems for us to try!](https://docs.google.com/presentation/d/1IwAoLZMTFeWiz0YZUyCvjQ4Hp7PpCqGMhgCqimQRPWs/edit?usp=sharing)
 
-[slides]: https://docs.google.com/presentation/d/1IwAoLZMTFeWiz0YZUyCvjQ4Hp7PpCqGMhgCqimQRPWs/edit?usp=sharing
+**Screenshot Gallery:**
 
 ![Screenshot][sshot]
 
