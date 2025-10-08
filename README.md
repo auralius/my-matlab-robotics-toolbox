@@ -19,7 +19,7 @@ How to use:
 * Create the robot structure with **cgr_create**.
 * Actuate and update the joint with **cgr_self_update** functions.
 * If necessary, plot the robot with **ncgr_plot** by first calling **ncgr_graphic** once at the beginning of the program.
-* To create the compiled MEX or DLL files, two examples of MATLAB Coder project files  are provided. This is where the global variable is used.
+* To create the compiled MEX or DLL files, two examples of MATLAB Coder project files  are provided. 
 
 [Here are some kinematics problems for us to try!](https://docs.google.com/presentation/d/1IwAoLZMTFeWiz0YZUyCvjQ4Hp7PpCqGMhgCqimQRPWs/edit?usp=sharing)
 
