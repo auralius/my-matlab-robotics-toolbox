@@ -36,7 +36,7 @@ if g.sl == -1 %only do once
     end
 
     % --- Layout + continuous polling on mouse move ---
-    g.f.SizeChangedFcn = @(h,~)do_layout(h);
+    g.f.SizeChangedFcn = @(h,~)do_layout();
     g.f.WindowButtonMotionFcn = @(h,~)poll_while_dragging(h);  % continuous
     g.f.CloseRequestFcn = @(h,~)on_close(h);
     do_layout();      % initial placement
