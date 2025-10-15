@@ -16,6 +16,7 @@ function r = cgr_self_update(r, qc, base)
     end
     
     r.qc = qc;
+    r.theta = qc;
     r.T = cgr_fkine(r, qc); 
     r.jac = cgr_jac(r, qc);
 end
