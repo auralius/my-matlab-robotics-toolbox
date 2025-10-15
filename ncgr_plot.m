@@ -58,7 +58,7 @@ if (g.h == -1) % only do once
     zlim(z_range);
 
     view(view_vector);
-    g.h = plot3(0, 0, 0, '-m*', 'LineWidth', 4);    
+    g.h = plot3(0, 0, 0, 'Marker', '.', 'LineWidth', 4, 'Color', [1, 0, 1, 0.2]);    
 
     g.quiver_x = quiver3(0,0,0,0,0,0, 'Color', 'r', 'LineWidth', 2, 'AutoScale', 'off');
     g.quiver_y = quiver3(0,0,0,0,0,0, 'Color', 'g', 'LineWidth', 2, 'AutoScale', 'off');
