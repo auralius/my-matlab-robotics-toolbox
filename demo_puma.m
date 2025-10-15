@@ -10,10 +10,6 @@ close all;
 g = ncgr_graphic();
 
 %% Puma robot DH-Parameters
-
-global N_DOFS;
-N_DOFS = 6;
-
 theta = [0 0 0 0 0 0];
 alpha = [-pi/2 0 pi/2 -pi/2 pi/2 0];
 offset = [0 0 0 0 0 0];
@@ -28,7 +24,7 @@ ub = [deg2rad(110)  deg2rad(240) deg2rad(60)   deg2rad(40)   deg2rad(110)  deg2r
 
 puma = cgr_create(theta, d, a, alpha, offset, type, base, ub, lb);
 puma = cgr_self_update(puma, [0 0 0 0 0 0]);
-g = ncgr_plot(g, puma, [144 18], 0.5, [-5 20], [-10 10], [0 15]);
+g = ncgr_plot(g, puma, [144 18], 2.0, [-5 20], [-10 10], [0 15]);
 
 
 %% Demo inverese kinematics
@@ -39,6 +35,6 @@ step = linspace(0, 10, 100);
 for i = 1:length(step)
     [q, k, err] = cgr_ikine1(puma, [x(1)+step(i); x(2); 13], 0.001, 1000);
     puma = cgr_self_update(puma, q);
-    g = ncgr_plot(g, puma);
+    g = ncgr_plot(g, puma, [144 18], 2.0);
     pause(0.1);
 end

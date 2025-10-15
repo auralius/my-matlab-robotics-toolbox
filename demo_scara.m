@@ -7,8 +7,6 @@ close all;
 g = ncgr_graphic();
 
 %% Scara robot DH-Parameters
-global N_DOFS;
-N_DOFS = 4;
 
 theta = [0 0 0 0];
 alpha = [0 0 0 0];

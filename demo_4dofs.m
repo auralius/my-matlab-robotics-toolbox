@@ -6,7 +6,6 @@ close all;
 %% Graphic
 g = ncgr_graphic();
 
-global N_DOFS;
 N_DOFS = 4;
 
 %% 4-R-planar robot DH-Parameters
