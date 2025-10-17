@@ -27,15 +27,15 @@ How to use:
 
 ![Screenshot][sshot]
 
-[sshot]: https://raw.githubusercontent.com/auralius/my-matlab-robotics-toolbox/master/sshot.png "Screenshot"
+[sshot]: https://raw.githubusercontent.com/auralius/my-matlab-robotics-toolbox/images/master/sshot.png "Screenshot"
 
 ![Screenshot][sshot3]
 
-[sshot3]: https://raw.githubusercontent.com/auralius/my-matlab-robotics-toolbox/master/sshot3.png "Screenshot3"
+[sshot3]: https://raw.githubusercontent.com/auralius/my-matlab-robotics-toolbox/images/master/sshot3.png "Screenshot3"
 
 ![Screenshot][sshot2]
 
-[sshot2]: https://raw.githubusercontent.com/auralius/my-matlab-robotics-toolbox/master/sshot2.png "Screenshot2"
+[sshot2]: https://raw.githubusercontent.com/auralius/my-matlab-robotics-toolbox/master/images/sshot2.png "Screenshot2"
 
 Auralius Manurung 
 auralius.manurung@ieee.org
