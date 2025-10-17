@@ -6,11 +6,13 @@ close all;
 %% Graphic
 g = ncgr_graphic();
 
-%% R-P robot DH-Parameters
+%% R-P-R robot DH-Parameters
 L1 = 0.1;
 L3 = 0.3;
 
 % DH Parameters
+% RPR robot
+% Example 3 in the slide: https://docs.google.com/presentation/d/1IwAoLZMTFeWiz0YZUyCvjQ4Hp7PpCqGMhgCqimQRPWs/edit?usp=sharing
 theta = [0 0 0];
 alpha = [-pi/2 0 0];
 d = [L1 0 L3];
