@@ -1,4 +1,6 @@
-%%
+% Example 3 in the slides: 
+% https://docs.google.com/presentation/d/1IwAoLZMTFeWiz0YZUyCvjQ4Hp7PpCqGMhgCqimQRPWs/edit?usp=sharing
+
 clc;
 clear all;
 close all;
@@ -11,8 +13,6 @@ L1 = 0.1;
 L3 = 0.3;
 
 % DH Parameters
-% RPR robot
-% Example 3 in the slide: https://docs.google.com/presentation/d/1IwAoLZMTFeWiz0YZUyCvjQ4Hp7PpCqGMhgCqimQRPWs/edit?usp=sharing
 theta = [0 0 0];
 alpha = [-pi/2 0 0];
 d = [L1 0 L3];
