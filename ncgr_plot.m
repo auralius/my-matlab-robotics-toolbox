@@ -71,19 +71,25 @@ if (g.h == -1) % only do once
     for i = 0 : N_DOFS
         g.htxt(i+1) = text(0,0,0, num2str(i), 'FontWeight', 'bold');
     end
+end    
 
-    set(g.htxt(1), 'Position', r.base);
-end
+% The base
+vx(:, 1) = [1; 0; 0] * axis_scale;
+vy(:, 1) = [0; 1; 0] * axis_scale;
+vz(:, 1) = [0; 0; 1] * axis_scale ;
+x(:, 1)  = [r.base(1); r.base(2); r.base(3)];
+set(g.htxt(1), 'Position', r.base);
 
+% The joints
 for i = 1 : N_DOFS
-    vx(:, i) = r.T(1:3, 1:3, i) * [1; 0; 0];
-    vx(:, i) = vx(:, i) / norm(vx(:, i))  * axis_scale;
-    vy(:, i) = r.T(1:3, 1:3, i) * [0; 1; 0];
-    vy(:, i) = vy(:, i) / norm(vy(:, i)) * axis_scale;
-    vz(:, i) = r.T(1:3, 1:3, i) * [0; 0; 1];
-    vz(:, i) = vz(:, i) / norm(vz(:, i)) * axis_scale ;
-    x(:, i)  = r.T(1:3, 4  , i);
-    set(g.htxt(i+1), 'Position', x(:, i) + [0; 0; 0.02]);
+    vx(:, i+1) = r.T(1:3, 1:3, i) * [1; 0; 0];
+    vx(:, i+1) = vx(:, i+1) / norm(vx(:, i+1))  * axis_scale;
+    vy(:, i+1) = r.T(1:3, 1:3, i) * [0; 1; 0];
+    vy(:, i+1) = vy(:, i+1) / norm(vy(:, i+1)) * axis_scale;
+    vz(:, i+1) = r.T(1:3, 1:3, i) * [0; 0; 1];
+    vz(:, i+1) = vz(:, i+1) / norm(vz(:, i+1)) * axis_scale ;
+    x(:, i+1)  = r.T(1:3, 4  , i);
+    set(g.htxt(i+1), 'Position', x(:, i+1) + 1.2 * vz(:, i+1));
 end
 
 set(g.h, 'XData', [r.base(1) x(1, :)], 'YData', [r.base(2) x(2, :)], ...
