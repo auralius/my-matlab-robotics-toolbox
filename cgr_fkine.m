@@ -26,31 +26,21 @@ T = repmat(zeros(4), 1, 1, N_DOFS);
 
 for i = 1 : N_DOFS
     if r.type(i) == 'r'
-        r.theta(i) = q(i);
+        r.theta(i) = q(i) + r.offset(i);
     elseif r.type(i) == 'p'
-        r.d(i) = q(i);
+        r.d(i) = q(i) + r.offset(i);
     end
 end
 
 for i = 1 : 1 : N_DOFS
     ca = cos(r.alpha(i));
     sa = sin(r.alpha(i));
-
     ct = cos(r.theta(i));
     st = sin(r.theta(i));
-    if (r.type(i) == 'r')
-        ct = cos(r.theta(i) + r.offset(i));
-        st = sin(r.theta(i) + r.offset(i));
-    end
-
-    d = r.d(i);
-    if (r.type(i) == 'p')
-        d = r.d(i) + r.offset(i);
-    end
 
     temp = temp * [ ct    -st*ca   st*sa     r.a(i)*ct ; ...
                     st    ct*ca    -ct*sa    r.a(i)*st ; ...
-                    0     sa       ca        d        ; ...
+                    0     sa       ca        r.d(i)    ; ...
                     0     0        0         1 ];
     temp(1:3, 4) = temp(1:3, 4);
     T(:,:,i) = temp;
